@@ -14,10 +14,9 @@
         <h4>Guess what letter I'm thinking of!
             <h4>
                 <p>Wins:</p>
-                <p>
-                    <Losses:<p>
-                        <p>Number of Guesses left:</p>
-                        <p>Number of Guesses so far:</p>
+                <p>Losses:<p>
+                <p>Number of Guesses left:</p>
+                <p>Number of Guesses so far:</p>
     </div>
 
     <script>type = "text/javascript" >
@@ -30,7 +29,7 @@
         var numGuessesn = 9;
         var guessChoices = [];
 
-        dacument.onkeyup = function (event) {
+        document.onkeyup = function (event) {
             var userGuess = event.key;
             var compputerGuess = computerChoices[math.floor(Math.random()) * compputerChoices.length)];
             var options = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l",
@@ -60,6 +59,14 @@
             "<p>Guesses so far: " + 
 
 
-    
+    <script>
+                    function showMsg(){
+  var userInput = document.getElementById('userInput').value;
+                    document.getElementById('userMsg').innerHTML = userInput;
+                  }
+                      </script>
+<input type="input" maxlength="40" id="userInput" onkeyup="showMsg()" placeholder="Enter text here...">
+<p id="userMsg"></p>
 </body >
-</html >.,
+
+</html >
