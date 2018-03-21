@@ -1,44 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
 </head>
+
 <body>
-    <div id ="game">
+    <div id="game">
         <h1> The Psychic Game </h1>
-        <h4>Guess what letter I'm thinking of!<h4>
-        <p>Wins:</p>
-        <p><Losses:<p>
-        <p>Number of Guesses left:</p> 
-        <p>Number of Guesses so far:</p>  
+        <h4>Guess what letter I'm thinking of!
+            <h4>
+                <p>Wins:</p>
+                <p>
+                    <Losses:<p>
+                        <p>Number of Guesses left:</p>
+                        <p>Number of Guesses so far:</p>
     </div>
 
-    <script>type="text/javascript">
+    <script>type = "text/javascript" >
 
-    var computerChoices=["a","b","c","d","e","f","g","h","i","j","k","l",
-    "m","n","o","p","q","r","s","t","u","v","w","x","y","z"]
+    var computerChoices = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l",
+            "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
+
+        var wins = 0;
+        var losses = 0;
+        var numGuessesn = 9;
+        var guessChoices = [];
+
+        dacument.onkeyup = function (event) {
+            var userGuess = event.key;
+            var compputerGuess = computerChoices[math.floor(Math.random()) * compputerChoices.length)];
+            var options = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l",
+                "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
+
+
+
+            if (options.indexOf(userGuess) > -1) {
+                if (userguess === computerGuess) {
+                    wins ==;
+                    numGuesses = 9;
+                    guessChoices = [];
+                }
+            }
+            if (userGuesses === 0);
+            {
+                numGuesses = 9;
+                losses++;
+                guessChoices = {}
+            }
+            var html =
+            "<h1> The Psychic Game Game </h1>"
+            "<h4>Guess what letter I'm thinking of!</h4>"
+            "<p>Wins: " + wins "</p>" +
+            "<p>Losses: " + losses + ""
+
+
     
-    var wins =0;
-    var losses = 0;
-    var numGuessesn = 9;
-    var guessChoices =[];
-
-    dacument.onkeyup = function(event) {
-    var userGuess = event.key;
-    var compputerGuess = computerChoices[math.floor(Math.random()) * compputerChoices.length)];
-
-    if (options.indexOf(userGuess) > -1){
-        if (userguess === computerGuess){
-            wins==;
-            numGuesses = 0;
-            guessChoices = [];
-        }
-    }
-
-      
-    
-</body>
-</html>.,
+</body >
+</html >.,
