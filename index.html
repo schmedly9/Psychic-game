@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Phychic</title>
+    <title>Psychic</title>
 </head>
 
 <body>
@@ -34,7 +34,7 @@
         var wins = 0;
         var losses = 0;
         var numGuesses = 9;
-        var guessChoices = [12];
+        var guessChoices = [];
         var computerGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)];
 
         // go out and find the element with this ID and store it in a variable
@@ -47,35 +47,37 @@
         htmlWins.textContent = wins;
         htmlLosses.textContent = losses;
         htmlguessChoices.textContent = guessChoices;
+        htmlnumGuessLeft.textContent = numGuesses;
 
         document.onkeyup = function (event) {
             var userGuess = event.key;
-            console.log("computerGuess:", computerGuess);
-            if (userGuess === computerGuess) {
-                wins++;
-                numGuesses - 1;
-                guessChoices = [];
-            } 
-            else {
-                numGuesses --;
-                guessChoices.push(userGuess);
-                
+            console.log("computerGuess", computerGuess); {
+                if (userGuess === computerGuess) {
+                    wins++;
+                    numGuesses = 9;
+                    guessChoices = [];
+                }
+                else {
+                    numGuesses--;
+                    guessChoices.push(userGuess);
+                }
+                // If there is no more guesses left
+                // reset the number of guesses
+                // and reset the guess choices array
+                if(numGuesses === 0){
+                    losses++;
+                    numGuesses = 9;
+                    guessChoices = [];
+                }
+
+               
+
+                // change the text content of the wins html
+                htmlguessChoices.textContent = guessChoices;
+                htmlLosses.textContent = losses;
+                htmlWins.textContent = wins;
+                htmlnumGuessLeft.textContent = numGuesses;
             }
-            if  (userGuess !== computerGuess) {
-                numGuesses --;
-
-
-            }
-             
-            
-
-
-            // change the text content of the wins html
-            htmlguessChoices.textContent = guessChoices;
-            htmlLosses.textContent = losses;
-            htmlWins.textContent = wins;
-            htmlnumGuessLeft.textContent = numGuessLeft;
-         
         }
     </script>
 </body>
