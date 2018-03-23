@@ -5,68 +5,77 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Phychic</title>
 </head>
 
 <body>
     <div id="game">
         <h1> The Psychic Game </h1>
-        <h4>Guess what letter I'm thinking of!
-            <h4>
-                <p>Wins:</p>
-                <p>Losses:<p>
-                <p>Number of Guesses left:</p>
-                <p>Number of Guesses so far:</p>
+        <h4>Guess what letter I'm thinking of!</h4>
+        <p>Wins:
+            <span id="wins"></span>
+        </p>
+        <p>Losses:
+            <span id="losses"></span>
+        </p>
+        <p>Already guessed:
+            <span id="guessChoices"></span>
+        </p>
+        <p>Number of Guesses left:
+            <span id="numGuessLeft"></span>
+        </p>
     </div>
 
-    <script>type = "text/javascript" >
+    <script type="text/javascript">
 
-    var computerChoices = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l",
-            "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
+        var computerChoices = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l",
+            "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 
         var wins = 0;
         var losses = 0;
-        var numGuessesn = 9;
+        var numGuesses = 9;
         var guessChoices = [];
+        var computerGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)];
+
+        // go out and find the element with this ID and store it in a variable
+        var htmlWins = document.getElementById('wins');
+        var htmlguessChoices = document.getElementById('guessChoices');
+        var htmlLosses = document.getElementById('losses');
+        var htmlnumGuessLeft = document.getElementById('numGuessLeft');
+
+        // set the text to the variable we have defined
+        htmlWins.textContent = wins;
+        htmlLosses.textContent = losses;
+        htmlguessChoices.textContent = guessChoices;
 
         document.onkeyup = function (event) {
             var userGuess = event.key;
-            var compputerGuess = computerChoices[math.floor(Math.random()) * compputerChoices.length)];
-            var options = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l",
-                "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
-
-
-
-            if (options.indexOf(userGuess) > -1) {
-                if (userguess === computerGuess) {
-                    wins ==;
-                    numGuesses = 9;
-                    guessChoices = [];
-                }
-            }
-            if (userGuesses === 0);
-            {
+            console.log("computerGuess:", computerGuess);
+            if (userGuess === computerGuess) {
+                wins++;
                 numGuesses = 9;
+                guessChoices = [];
+            } else {
+                numGuesses--;
+                guessChoices.push(userGuess);
+                
+                }
+                if (numGuesses > 9){
                 losses++;
-                guessChoices = {}
-            }
-            var html =
-            "<h1> The Psychic Game Game </h1>"
-            "<h4>Guess what letter I'm thinking of!</h4>"
-            "<p>Wins: " + wins "</p>" +
-            "<p>Losses: " + losses + "</p>" +
-            "<p>Guesses Left: " + numGuessCjoices.join(", ") + "</p>";
-            "<p>Guesses so far: " + 
+                endgame;
+
+                }
+            
 
 
-    <script>
-                    function showMsg(){
-  var userInput = document.getElementById('userInput').value;
-                    document.getElementById('userMsg').innerHTML = userInput;
-                  }
-                      </script>
-<input type="input" maxlength="40" id="userInput" onkeyup="showMsg()" placeholder="Enter text here...">
-<p id="userMsg"></p>
-</body >
+            // change the text content of the wins html
+            htmlguessChoices.textContent = guessChoices;
+            htmlLosses.textContent = losses;
+            htmlWins.textContent = wins;
+            htmlnumGuessLeft.textContent = numGuessLeft;
+         
+        }
+    </script>
+</body>
 
-</html >
+</html>
