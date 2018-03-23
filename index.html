@@ -54,6 +54,7 @@
             console.log("computerGuess", computerGuess); {
                 if (userGuess === computerGuess) {
                     wins++;
+                    computerGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)];
                     numGuesses = 9;
                     guessChoices = [];
                 }
@@ -66,6 +67,7 @@
                 // and reset the guess choices array
                 if(numGuesses === 0){
                     losses++;
+                    computerGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)];
                     numGuesses = 9;
                     guessChoices = [];
                 }
