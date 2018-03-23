@@ -34,7 +34,7 @@
         var wins = 0;
         var losses = 0;
         var numGuesses = 9;
-        var guessChoices = [];
+        var guessChoices = [12];
         var computerGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)];
 
         // go out and find the element with this ID and store it in a variable
@@ -53,13 +53,19 @@
             console.log("computerGuess:", computerGuess);
             if (userGuess === computerGuess) {
                 wins++;
-                numGuesses = 9;
+                numGuesses - 1;
                 guessChoices = [];
-            } else {
-                numGuesses--;
+            } 
+            else {
+                numGuesses --;
                 guessChoices.push(userGuess);
                 
-                }
+            }
+            if  (userGuess !== computerGuess) {
+                numGuesses --;
+
+
+            }
              
             
 
