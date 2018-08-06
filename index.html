@@ -56,20 +56,19 @@
             
             if (userGuess === computerGuess) {
                 wins++;
-                numGuessLeft = 12;
                 guessChoices = [];
                 computerGuess ++;
             } 
             else  {
-                numGuessLeft -- ;
-             
+                numGuessLeft --;
+            
                 guessChoices.push(event.key);
                 
             }
-            if  ( numGuessLeft == 0 ) {
+            if   (numGuessLeft == 0 ) {
                  losses ++ ;
-                 numGuessLeft = 12;
                  guessChoices = [];
+                 numGuessLeft = 12;
                 
             } 
              
@@ -77,7 +76,7 @@
                 htmlguessChoices.textContent = guessChoices;
                 htmlLosses.textContent = losses;
                 htmlWins.textContent = wins;
-                htmlnumGuessLeft.textContent = numGuesses;
+                htmlnumGuessLeft.textContent = numGuessLeft;
             }
         
     </script>
