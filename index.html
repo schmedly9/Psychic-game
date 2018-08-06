@@ -47,7 +47,6 @@
         htmlWins.textContent = wins;
         htmlLosses.textContent = losses;
         htmlguessChoices.textContent = guessChoices;
-<<<<<<< HEAD
         htmlnumGuessLeft.textContent = numGuessLeft;
        
     
@@ -74,43 +73,13 @@
                 
             } 
              
-            
-=======
-        htmlnumGuessLeft.textContent = numGuesses;
-
-        document.onkeyup = function (event) {
-            var userGuess = event.key;
-            console.log("computerGuess", computerGuess); {
-                if (userGuess === computerGuess) {
-                    wins++;
-                    computerGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)];
-                    numGuesses = 9;
-                    guessChoices = [];
-                }
-                else {
-                    numGuesses--;
-                    guessChoices.push(userGuess);
-                }
-                // If there is no more guesses left
-                // reset the number of guesses
-                // and reset the guess choices array
-                if(numGuesses === 0){
-                    losses++;
-                    computerGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)];
-                    numGuesses = 9;
-                    guessChoices = [];
-                }
->>>>>>> ec310c6d6cbcffa8ed0aa723123e133789fd1cb3
-
-               
-
                 // change the text content of the wins html
                 htmlguessChoices.textContent = guessChoices;
                 htmlLosses.textContent = losses;
                 htmlWins.textContent = wins;
                 htmlnumGuessLeft.textContent = numGuesses;
             }
-        }
+        
     </script>
 </body>
 
