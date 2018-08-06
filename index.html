@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Phychic</title>
+    <title>Psychic</title>
 </head>
 
 <body>
@@ -33,7 +33,7 @@
 
         var wins = 0;
         var losses = 0;
-        var numGuesses = 9;
+        var numGuessLeft = 12;
         var guessChoices = [];
         var computerGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)];
 
@@ -47,19 +47,31 @@
         htmlWins.textContent = wins;
         htmlLosses.textContent = losses;
         htmlguessChoices.textContent = guessChoices;
-
+        htmlnumGuessLeft.textContent = numGuessLeft;
+       
+    
         document.onkeyup = function (event) {
             var userGuess = event.key;
-            console.log("computerGuess:", computerGuess);
+            var userInput = String.fromCharCode(event.which).toLowerCase();
+            
             if (userGuess === computerGuess) {
                 wins++;
-                numGuesses = 9;
+                numGuessLeft = 12;
                 guessChoices = [];
-            } else {
-                numGuesses--;
-                guessChoices.push(userGuess);
+                computerGuess ++;
+            } 
+            else  {
+                numGuessLeft -- ;
+             
+                guessChoices.push(event.key);
                 
-                }
+            }
+            if  ( numGuessLeft == 0 ) {
+                 losses ++ ;
+                 numGuessLeft = 12;
+                 guessChoices = [];
+                
+            } 
              
             
 
